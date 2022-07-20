@@ -202,7 +202,7 @@ SOFTWARE.
 [code-quality]: https://lgtm.com/projects/g/klaasnicolaas/python-liege/context:python
 [commits-shield]: https://img.shields.io/github/commit-activity/y/klaasnicolaas/python-liege.svg
 [commits-url]: https://github.com/klaasnicolaas/python-liege/commits/main
-[codecov-shield]: https://codecov.io/gh/klaasnicolaas/python-liege/branch/main/graph/badge.svg?token=5JNbz4akUL
+[codecov-shield]: https://codecov.io/gh/klaasnicolaas/python-liege/branch/main/graph/badge.svg?token=jTIsaqV5x0
 [codecov-url]: https://codecov.io/gh/klaasnicolaas/python-liege
 [forks-shield]: https://img.shields.io/github/forks/klaasnicolaas/python-liege.svg
 [forks-url]: https://github.com/klaasnicolaas/python-liege/network/members
@@ -211,7 +211,7 @@ SOFTWARE.
 [license-shield]: https://img.shields.io/github/license/klaasnicolaas/python-liege.svg
 [last-commit-shield]: https://img.shields.io/github/last-commit/klaasnicolaas/python-liege.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
-[maintainability-shield]: https://api.codeclimate.com/v1/badges/ceb27fb15cf0e485dc23/maintainability
+[maintainability-shield]: https://api.codeclimate.com/v1/badges/1b4ebe208e72d8f467f9/maintainability
 [maintainability-url]: https://codeclimate.com/github/klaasnicolaas/python-liege/maintainability
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [pypi]: https://pypi.org/project/liege/
