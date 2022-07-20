@@ -1,0 +1,392 @@
+{
+    "nhits": 950,
+    "parameters": {
+        "dataset": "stationnement-pmr",
+        "rows": 10,
+        "start": 0,
+        "format": "json",
+        "timezone": "UTC"
+    },
+    "records": [
+        {
+            "datasetid": "stationnement-pmr",
+            "recordid": "cba258ed55c9c207f5bd4b9db97053be72f99eb7",
+            "fields": {
+                "street_code": 7241,
+                "geo_point_2d": [
+                    50.602958578,
+                    5.6051201
+                ],
+                "last_modified": "2021-11-26",
+                "available_spaces": 1,
+                "icar_street_id": 7730142,
+                "status": "Existant",
+                "gid": 1833,
+                "municipality": "Liège",
+                "street_name": "quai Saint-Paul de Sinçay",
+                "created": "2021-11-26",
+                "geo_shape": {
+                    "coordinates": [
+                        5.6051201,
+                        50.602958578
+                    ],
+                    "type": "Point"
+                },
+                "house_number": "103",
+                "icar_address_id": 1108862,
+                "city": "Liège",
+                "postal_code": 4031
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.6051201,
+                    50.602958578
+                ]
+            },
+            "record_timestamp": "2022-07-18T22:56:00Z"
+        },
+        {
+            "datasetid": "stationnement-pmr",
+            "recordid": "f532805125b393e03e1feffb45c5695a9370a4b3",
+            "fields": {
+                "street_code": 1258,
+                "geo_point_2d": [
+                    50.6273122047,
+                    5.584375254
+                ],
+                "last_modified": "2022-02-07",
+                "available_spaces": 1,
+                "icar_street_id": 7730730,
+                "status": "Existant",
+                "gid": 1668,
+                "municipality": "Liège",
+                "street_name": "rue des Vennes",
+                "created": "2021-03-31",
+                "geo_shape": {
+                    "coordinates": [
+                        5.584375254,
+                        50.6273122047
+                    ],
+                    "type": "Point"
+                },
+                "house_number": "112",
+                "icar_address_id": 1241319,
+                "city": "Liège",
+                "postal_code": 4020
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.584375254,
+                    50.6273122047
+                ]
+            },
+            "record_timestamp": "2022-07-18T22:56:00Z"
+        },
+        {
+            "datasetid": "stationnement-pmr",
+            "recordid": "a5c82752dd23cfc9ecb1db2db496f964a59a3b82",
+            "fields": {
+                "street_code": 7666,
+                "geo_point_2d": [
+                    50.6302120608,
+                    5.6285546432
+                ],
+                "last_modified": "2021-03-27",
+                "available_spaces": 1,
+                "icar_street_id": 7729648,
+                "status": "Existant",
+                "gid": 1581,
+                "municipality": "Liège",
+                "street_name": "avenue Freddy Terwagne",
+                "created": "2021-03-27",
+                "geo_shape": {
+                    "coordinates": [
+                        5.6285546432,
+                        50.6302120608
+                    ],
+                    "type": "Point"
+                },
+                "house_number": "3",
+                "icar_address_id": 1441771,
+                "city": "Liège",
+                "postal_code": 4030
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.6285546432,
+                    50.6302120608
+                ]
+            },
+            "record_timestamp": "2022-07-18T22:56:00Z"
+        },
+        {
+            "datasetid": "stationnement-pmr",
+            "recordid": "af10b2a70ad90340e5ade2ff9bef10e2344a94c6",
+            "fields": {
+                "street_code": 7666,
+                "geo_point_2d": [
+                    50.6295297953,
+                    5.6296538896
+                ],
+                "last_modified": "2021-03-26",
+                "available_spaces": 1,
+                "icar_street_id": 7729648,
+                "status": "Existant",
+                "gid": 1408,
+                "municipality": "Liège",
+                "street_name": "avenue Freddy Terwagne",
+                "created": "2021-03-26",
+                "geo_shape": {
+                    "coordinates": [
+                        5.6296538896,
+                        50.6295297953
+                    ],
+                    "type": "Point"
+                },
+                "house_number": "6",
+                "icar_address_id": 1107123,
+                "city": "Liège",
+                "postal_code": 4030
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.6296538896,
+                    50.6295297953
+                ]
+            },
+            "record_timestamp": "2022-07-18T22:56:00Z"
+        },
+        {
+            "datasetid": "stationnement-pmr",
+            "recordid": "a48ff4080ce9bf776c64347026e979980b7aa708",
+            "fields": {
+                "street_code": 365,
+                "geo_point_2d": [
+                    50.6318805217,
+                    5.5696178047
+                ],
+                "last_modified": "2021-03-27",
+                "available_spaces": 1,
+                "icar_street_id": 7729664,
+                "status": "Existant",
+                "gid": 1543,
+                "municipality": "Liège",
+                "street_name": "avenue Rogier",
+                "created": "2021-03-27",
+                "geo_shape": {
+                    "coordinates": [
+                        5.5696178047,
+                        50.6318805217
+                    ],
+                    "type": "Point"
+                },
+                "house_number": "18",
+                "icar_address_id": 1121257,
+                "city": "Liège",
+                "postal_code": 4000
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.5696178047,
+                    50.6318805217
+                ]
+            },
+            "record_timestamp": "2022-07-18T22:56:00Z"
+        },
+        {
+            "datasetid": "stationnement-pmr",
+            "recordid": "72afbf64b9a82b0413b25961e8f2544db756f124",
+            "fields": {
+                "street_code": 31,
+                "geo_point_2d": [
+                    50.6307092203,
+                    5.5680728796
+                ],
+                "last_modified": "2021-08-27",
+                "available_spaces": 1,
+                "icar_street_id": 7729672,
+                "status": "Existant",
+                "gid": 1798,
+                "municipality": "Liège",
+                "street_name": "boulevard d'Avroy",
+                "created": "2021-08-27",
+                "geo_shape": {
+                    "coordinates": [
+                        5.5680728796,
+                        50.6307092203
+                    ],
+                    "type": "Point"
+                },
+                "house_number": "276",
+                "icar_address_id": 1119508,
+                "city": "Liège",
+                "postal_code": 4000
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.5680728796,
+                    50.6307092203
+                ]
+            },
+            "record_timestamp": "2022-07-18T22:56:00Z"
+        },
+        {
+            "datasetid": "stationnement-pmr",
+            "recordid": "0f803ce3f8a439b97b87590ce1d9a7f041cb7823",
+            "fields": {
+                "street_code": 1214,
+                "geo_point_2d": [
+                    50.6218024925,
+                    5.5943756709
+                ],
+                "last_modified": "2021-03-25",
+                "available_spaces": 1,
+                "icar_street_id": 7729674,
+                "status": "Existant",
+                "gid": 1365,
+                "municipality": "Liège",
+                "street_name": "boulevard de Douai",
+                "created": "2021-03-25",
+                "geo_shape": {
+                    "coordinates": [
+                        5.5943756709,
+                        50.6218024925
+                    ],
+                    "type": "Point"
+                },
+                "house_number": "21",
+                "icar_address_id": 1121671,
+                "city": "Liège",
+                "postal_code": 4030
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.5943756709,
+                    50.6218024925
+                ]
+            },
+            "record_timestamp": "2022-07-18T22:56:00Z"
+        },
+        {
+            "datasetid": "stationnement-pmr",
+            "recordid": "0052b27ddde3d099a0711783f8544d302690d7d0",
+            "fields": {
+                "street_code": 8227,
+                "geo_point_2d": [
+                    50.6670818366,
+                    5.5570811831
+                ],
+                "last_modified": "2021-03-25",
+                "available_spaces": 1,
+                "icar_street_id": 7729709,
+                "status": "Existant",
+                "gid": 1322,
+                "municipality": "Liège",
+                "street_name": "chaussée de Tongres",
+                "created": "2021-03-25",
+                "geo_shape": {
+                    "coordinates": [
+                        5.5570811831,
+                        50.6670818366
+                    ],
+                    "type": "Point"
+                },
+                "house_number": "139",
+                "icar_address_id": 1130371,
+                "city": "Liège",
+                "postal_code": 4000
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.5570811831,
+                    50.6670818366
+                ]
+            },
+            "record_timestamp": "2022-07-18T22:56:00Z"
+        },
+        {
+            "datasetid": "stationnement-pmr",
+            "recordid": "90c7723fdd27a793bae73e9bac313d3877d646d4",
+            "fields": {
+                "street_code": 851,
+                "geo_point_2d": [
+                    50.6487827409,
+                    5.5677519905
+                ],
+                "last_modified": "2021-03-26",
+                "available_spaces": 1,
+                "icar_street_id": 7729933,
+                "status": "Existant",
+                "gid": 1492,
+                "municipality": "Liège",
+                "street_name": "Montagne Sainte-Walburge",
+                "created": "2021-03-26",
+                "geo_shape": {
+                    "coordinates": [
+                        5.5677519905,
+                        50.6487827409
+                    ],
+                    "type": "Point"
+                },
+                "house_number": "43",
+                "icar_address_id": 1105875,
+                "city": "Liège",
+                "postal_code": 4000
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.5677519905,
+                    50.6487827409
+                ]
+            },
+            "record_timestamp": "2022-07-18T22:56:00Z"
+        },
+        {
+            "datasetid": "stationnement-pmr",
+            "recordid": "e45cecc773093bb0196de7a0d109d2ae1609503a",
+            "fields": {
+                "street_code": 642,
+                "geo_point_2d": [
+                    50.6434944053,
+                    5.6330619893
+                ],
+                "last_modified": "2021-03-25",
+                "available_spaces": 1,
+                "icar_street_id": 7729985,
+                "status": "Existant",
+                "gid": 1257,
+                "municipality": "Liège",
+                "street_name": "place des Abeilles",
+                "created": "2021-03-25",
+                "geo_shape": {
+                    "coordinates": [
+                        5.6330619893,
+                        50.6434944053
+                    ],
+                    "type": "Point"
+                },
+                "house_number": "6",
+                "icar_address_id": 1117086,
+                "city": "Liège",
+                "postal_code": 4020
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.6330619893,
+                    50.6434944053
+                ]
+            },
+            "record_timestamp": "2022-07-18T22:56:00Z"
+        }
+    ]
+}
