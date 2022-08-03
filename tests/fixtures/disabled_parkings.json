@@ -366,7 +366,6 @@
                 "gid": 1257,
                 "municipality": "Liège",
                 "street_name": "place des Abeilles",
-                "created": "2021-03-25",
                 "geo_shape": {
                     "coordinates": [
                         5.6330619893,
