@@ -36,8 +36,8 @@ pip install liege
 
 You can read the following datasets with this package:
 
-- Disabled parking spaces / Stationnement PMR (950 locations)
-- Garages / Les parkings voitures hors voirie (10 locations)
+- [Disabled parking spaces / Stationnement PMR][disabled_parking] (952 locations)
+- [Garages / Les parkings voitures hors voirie][garages] (26 locations)
 
 <details>
     <summary>Click here to get more details</summary>
@@ -193,6 +193,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [api]: https://opendata.liege.be/explore
+[disabled_parking]: https://opendata.liege.be/explore/dataset/stationnement-pmr
+[garages]: https://opendata.liege.be/explore/dataset/parkings-voitures-hors-voirie
 [nipkaart]: https://www.nipkaart.nl
 
 <!-- MARKDOWN LINKS & IMAGES -->
