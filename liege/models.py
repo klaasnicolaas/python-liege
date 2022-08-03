@@ -60,7 +60,7 @@ class Garage:
 class DisabledParking:
     """Object representing a disabled parking."""
 
-    spot_id: int
+    spot_id: str
     number: int
     address: str
     municipality: str
@@ -87,7 +87,7 @@ class DisabledParking:
         attr = data["fields"]
         geo = data["geometry"]["coordinates"]
         return cls(
-            spot_id=attr.get("icar_address_id"),
+            spot_id=str(data.get("recordid")),
             number=attr.get("available_spaces"),
             address=f"{attr.get('street_name')} {attr.get('house_number')}, {attr.get('postal_code')}",
             municipality=attr.get("municipality"),
