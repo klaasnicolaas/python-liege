@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "liege"
 version = "0.0.0"
-description = "Asynchronous Python client providing Open Data information of Liege (luik)"
+description = "Asynchronous Python client providing Open Data information of Liège (luik)"
 authors = ["Klaas Schoute <hello@student-techlife.com>"]
 maintainers = ["Klaas Schoute <hello@student-techlife.com>"]
 license = "MIT"

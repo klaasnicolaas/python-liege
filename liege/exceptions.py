@@ -1,9 +1,9 @@
-"""Asynchronous Python client providing Open Data information of Liege."""
+"""Asynchronous Python client providing Open Data information of Liège."""
 
 
 class ODPLiegeError(Exception):
-    """Generic Open Data Platform Liege exception."""
+    """Generic Open Data Platform Liège exception."""
 
 
 class ODPLiegeConnectionError(ODPLiegeError):
-    """Open Data Platform Liege - connection error."""
+    """Open Data Platform Liège - connection error."""

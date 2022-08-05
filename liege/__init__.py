@@ -1,4 +1,4 @@
-"""Asynchronous Python client providing Open Data information of Liege."""
+"""Asynchronous Python client providing Open Data information of Liège."""
 
 from .exceptions import ODPLiegeConnectionError, ODPLiegeError
 from .liege import ODPLiege

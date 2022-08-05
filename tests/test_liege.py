@@ -1,4 +1,4 @@
-"""Basic tests for the Open Data Platform API of Liege."""
+"""Basic tests for the Open Data Platform API of Liège."""
 # pylint: disable=protected-access
 import asyncio
 from unittest.mock import patch
@@ -52,7 +52,7 @@ async def test_internal_session(aresponses: ResponsesMockServer) -> None:
 
 @pytest.mark.asyncio
 async def test_timeout(aresponses: ResponsesMockServer) -> None:
-    """Test request timeout from the Open Data Platform API of Liege."""
+    """Test request timeout from the Open Data Platform API of Liège."""
     # Faking a timeout by sleeping
     async def response_handler(_: aiohttp.ClientResponse) -> Response:
         await asyncio.sleep(0.2)
@@ -75,7 +75,7 @@ async def test_timeout(aresponses: ResponsesMockServer) -> None:
 
 @pytest.mark.asyncio
 async def test_content_type(aresponses: ResponsesMockServer) -> None:
-    """Test request content type error from Open Data Platform API of Liege."""
+    """Test request content type error from Open Data Platform API of Liège."""
     aresponses.add(
         "opendata.liege.be",
         "/api/records/1.0/test",
@@ -94,7 +94,7 @@ async def test_content_type(aresponses: ResponsesMockServer) -> None:
 
 @pytest.mark.asyncio
 async def test_client_error() -> None:
-    """Test request client error from the Open Data Platform API of Liege."""
+    """Test request client error from the Open Data Platform API of Liège."""
     async with aiohttp.ClientSession() as session:
         client = ODPLiege(session=session)
         with patch.object(

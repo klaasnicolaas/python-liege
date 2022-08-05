@@ -1,5 +1,5 @@
 # pylint: disable=W0621
-"""Asynchronous Python client providing Open Data information of Liege."""
+"""Asynchronous Python client providing Open Data information of Liège."""
 
 import asyncio
 
@@ -7,7 +7,7 @@ from liege import ODPLiege
 
 
 async def main() -> None:
-    """Show example on using the Liege API client."""
+    """Show example on using the Liège API client."""
     async with ODPLiege() as client:
         garages = await client.garages(limit=12)
         disabled_parkings = await client.disabled_parkings(limit=5)

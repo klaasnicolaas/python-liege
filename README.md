@@ -1,4 +1,4 @@
-## Python - ODP Liege Client
+## Python - ODP Liège Client
 
 <!-- PROJECT SHIELDS -->
 [![GitHub Release][releases-shield]][releases]
@@ -20,11 +20,11 @@
 [![Build Status][build-shield]][build-url]
 [![Typing Status][typing-shield]][typing-url]
 
-Asynchronous Python client for the open datasets of Liege (Belgium).
+Asynchronous Python client for the open datasets of Liège (Belgium).
 
 ## About
 
-A python package with which you can retrieve data from the Open Data Platform of Liege via [their API][api]. This package was initially created to only retrieve parking data from the API, but the code base is made in such a way that it is easy to extend for other datasets from the same platform.
+A python package with which you can retrieve data from the Open Data Platform of Liège via [their API][api]. This package was initially created to only retrieve parking data from the API, but the code base is made in such a way that it is easy to extend for other datasets from the same platform.
 
 ## Installation
 

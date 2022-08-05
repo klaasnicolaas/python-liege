@@ -1,4 +1,4 @@
-"""Asynchronous Python client providing Open Data information of Liege."""
+"""Asynchronous Python client providing Open Data information of Liège."""
 from __future__ import annotations
 
 import asyncio
@@ -18,7 +18,7 @@ from .models import DisabledParking, Garage
 
 @dataclass
 class ODPLiege:
-    """Main class for handling data fetchting from Open Data Platform of Liege."""
+    """Main class for handling data fetchting from Open Data Platform of Liège."""
 
     request_timeout: float = 10.0
     session: aiohttp.client.ClientSession | None = None
@@ -32,7 +32,7 @@ class ODPLiege:
         method: str = hdrs.METH_GET,
         params: dict[str, Any] | None = None,
     ) -> Any:
-        """Handle a request to the Open Data Platform API of Liege.
+        """Handle a request to the Open Data Platform API of Liège.
 
         Args:
             uri: Request URI, without '/', for example, 'status'
@@ -41,7 +41,7 @@ class ODPLiege:
 
         Returns:
             A Python dictionary (text) with the response from
-            the Open Data Platform API of Liege.
+            the Open Data Platform API of Liège.
 
         Raises:
             ODPLiegeConnectionError: Timeout occurred while
@@ -138,7 +138,7 @@ class ODPLiege:
         """Async enter.
 
         Returns:
-            The Open Data Platform Liege object.
+            The Open Data Platform Liège object.
         """
         return self
 
