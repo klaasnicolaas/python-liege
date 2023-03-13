@@ -1,4 +1,5 @@
-## Python - ODP Liège Client
+<!-- Banner -->
+![alt Banner of the ODP Liege package](https://raw.githubusercontent.com/klaasnicolaas/python-liege/main/assets/header_liege-min.png)
 
 <!-- PROJECT SHIELDS -->
 [![GitHub Release][releases-shield]][releases]
