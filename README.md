@@ -1,4 +1,5 @@
-## Python - ODP Liège Client
+<!-- Banner -->
+![alt Banner of the ODP Liege package](https://raw.githubusercontent.com/klaasnicolaas/python-liege/main/assets/header_liege-min.png)
 
 <!-- PROJECT SHIELDS -->
 [![GitHub Release][releases-shield]][releases]
@@ -14,11 +15,11 @@
 [![Issues][issues-shield]][issues-url]
 
 [![Code Quality][code-quality-shield]][code-quality]
-[![Maintainability][maintainability-shield]][maintainability-url]
-[![Code Coverage][codecov-shield]][codecov-url]
-
 [![Build Status][build-shield]][build-url]
 [![Typing Status][typing-shield]][typing-url]
+
+[![Maintainability][maintainability-shield]][maintainability-url]
+[![Code Coverage][codecov-shield]][codecov-url]
 
 Asynchronous Python client for the open datasets of Liège (Belgium).
 
@@ -200,8 +201,8 @@ SOFTWARE.
 <!-- MARKDOWN LINKS & IMAGES -->
 [build-shield]: https://github.com/klaasnicolaas/python-liege/actions/workflows/tests.yaml/badge.svg
 [build-url]: https://github.com/klaasnicolaas/python-liege/actions/workflows/tests.yaml
-[code-quality-shield]: https://img.shields.io/lgtm/grade/python/g/klaasnicolaas/python-liege.svg?logo=lgtm&logoWidth=18
-[code-quality]: https://lgtm.com/projects/g/klaasnicolaas/python-liege/context:python
+[code-quality-shield]: https://github.com/klaasnicolaas/python-liege/actions/workflows/codeql.yaml/badge.svg
+[code-quality]: https://github.com/klaasnicolaas/python-liege/actions/workflows/codeql.yaml
 [commits-shield]: https://img.shields.io/github/commit-activity/y/klaasnicolaas/python-liege.svg
 [commits-url]: https://github.com/klaasnicolaas/python-liege/commits/main
 [codecov-shield]: https://codecov.io/gh/klaasnicolaas/python-liege/branch/main/graph/badge.svg?token=jTIsaqV5x0
