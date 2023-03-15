@@ -7,11 +7,9 @@ from liege import ODPLiege
 
 
 async def main() -> None:
-    """Show example on using the Liège API client."""
+    """Get the disabled parkings data from Liège API."""
     async with ODPLiege() as client:
-        garages = await client.garages(limit=12)
         disabled_parkings = await client.disabled_parkings(limit=5)
-        print(garages)
 
         count: int
         for index, item in enumerate(disabled_parkings, 1):

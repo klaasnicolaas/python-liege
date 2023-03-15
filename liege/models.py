@@ -5,6 +5,8 @@ from dataclasses import dataclass
 from datetime import datetime
 from typing import Any
 
+import pytz
+
 
 @dataclass
 class Garage:
@@ -27,23 +29,28 @@ class Garage:
     updated_at: datetime
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> Garage:
+    def from_dict(cls: type[Garage], data: dict[str, Any]) -> Garage:
         """Return a Garage object from a dictionary.
 
         Args:
+        ----
             data: The data from the API.
 
         Returns:
+        -------
             A Garage object.
         """
-
         attr = data["fields"]
         geo = data["geometry"]["coordinates"]
         return cls(
             name=attr.get("title"),
             capacity=attr.get("available_spaces"),
             charging_stations=attr.get("charging_stations"),
-            address=f"{attr.get('street_name')} {attr.get('house_number')}, {attr.get('postal_code')}",
+            address=set_address(
+                attr.get("street_name"),
+                attr.get("house_number"),
+                attr.get("postal_code"),
+            ),
             municipality=attr.get("municipality"),
             city=attr.get("city"),
             provider=attr.get("provider"),
@@ -74,22 +81,27 @@ class DisabledParking:
     updated_at: datetime
 
     @classmethod
-    def from_dict(cls, data: dict[str, Any]) -> DisabledParking:
+    def from_dict(cls: type[DisabledParking], data: dict[str, Any]) -> DisabledParking:
         """Return a DisabledParking object from a dictionary.
 
         Args:
+        ----
             data: The data from the API.
 
         Returns:
+        -------
             A DisabledParking object.
         """
-
         attr = data["fields"]
         geo = data["geometry"]["coordinates"]
         return cls(
             spot_id=str(data.get("recordid")),
             number=attr.get("available_spaces"),
-            address=f"{attr.get('street_name')} {attr.get('house_number')}, {attr.get('postal_code')}",
+            address=set_address(
+                attr.get("street_name"),
+                attr.get("house_number"),
+                attr.get("postal_code"),
+            ),
             municipality=attr.get("municipality"),
             city=attr.get("city"),
             status=attr.get("status"),
@@ -104,14 +116,33 @@ def strptime(date_string: str, date_format: str, default: None = None) -> Any:
     """Strptime function with default value.
 
     Args:
+    ----
         date_string: The date string.
         date_format: The format of the date string.
         default: The default value.
 
     Returns:
+    -------
         The datetime object.
     """
     try:
-        return datetime.strptime(date_string, date_format)
+        return datetime.strptime(date_string, date_format).astimezone(tz=pytz.utc)
     except (ValueError, TypeError):
         return default
+
+
+def set_address(street: str, number: str, postal_code: str) -> str:
+    """Set the address.
+
+    Args:
+    ----
+        street: The street name.
+        number: The house number.
+        postal_code: The postal code.
+
+
+    Returns:
+    -------
+        The address.
+    """
+    return f"{street} {number}, {postal_code}"
