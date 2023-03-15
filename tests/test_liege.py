@@ -57,11 +57,15 @@ async def test_timeout(aresponses: ResponsesMockServer) -> None:
     async def response_handler(_: aiohttp.ClientResponse) -> Response:
         await asyncio.sleep(0.2)
         return aresponses.Response(
-            body="Goodmorning!", text=load_fixtures("garages.json")
+            body="Goodmorning!",
+            text=load_fixtures("garages.json"),
         )
 
     aresponses.add(
-        "opendata.liege.be", "/api/records/1.0/test", "GET", response_handler
+        "opendata.liege.be",
+        "/api/records/1.0/test",
+        "GET",
+        response_handler,
     )
 
     async with aiohttp.ClientSession() as session:
@@ -98,6 +102,8 @@ async def test_client_error() -> None:
     async with aiohttp.ClientSession() as session:
         client = ODPLiege(session=session)
         with patch.object(
-            session, "request", side_effect=aiohttp.ClientError
+            session,
+            "request",
+            side_effect=aiohttp.ClientError,
         ), pytest.raises(ODPLiegeConnectionError):
             assert await client._request("test")

@@ -35,22 +35,27 @@ class ODPLiege:
         """Handle a request to the Open Data Platform API of Liège.
 
         Args:
+        ----
             uri: Request URI, without '/', for example, 'status'
             method: HTTP method to use, for example, 'GET'
             params: Extra options to improve or limit the response.
 
         Returns:
+        -------
             A Python dictionary (text) with the response from
             the Open Data Platform API of Liège.
 
         Raises:
+        ------
             ODPLiegeConnectionError: Timeout occurred while
                 connecting to the Open Data Platform API.
             ODPLiegeError: If the data is not valid.
         """
         version = metadata.version(__package__)
         url = URL.build(
-            scheme="https", host="opendata.liege.be", path="/api/records/1.0/"
+            scheme="https",
+            host="opendata.liege.be",
+            path="/api/records/1.0/",
         ).join(URL(uri))
 
         headers = {
@@ -73,19 +78,22 @@ class ODPLiege:
                 )
                 response.raise_for_status()
         except asyncio.TimeoutError as exception:
+            msg = "Timeout occurred while connecting to the Open Data Platform API."
             raise ODPLiegeConnectionError(
-                "Timeout occurred while connecting to the Open Data Platform API."
+                msg,
             ) from exception
         except (aiohttp.ClientError, socket.gaierror) as exception:
+            msg = "Error occurred while communicating with Open Data Platform API."
             raise ODPLiegeConnectionError(
-                "Error occurred while communicating with Open Data Platform API."
+                msg,
             ) from exception
 
         content_type = response.headers.get("Content-Type", "")
         if "application/json" not in content_type:
             text = await response.text()
+            msg = "Unexpected content type response from the Open Data Platform API"
             raise ODPLiegeError(
-                "Unexpected content type response from the Open Data Platform API",
+                msg,
                 {"Content-Type": content_type, "Response": text},
             )
 
@@ -95,9 +103,11 @@ class ODPLiege:
         """Get list of disabled parking.
 
         Args:
+        ----
             limit: Maximum number of disabled parkings to return.
 
         Returns:
+        -------
             A list of DisabledParking objects.
         """
         results: list[DisabledParking] = []
@@ -114,9 +124,11 @@ class ODPLiege:
         """Get list of parking garages.
 
         Args:
+        ----
             limit: Maximum number of garages to return.
 
         Returns:
+        -------
             A list of Garage objects.
         """
         results: list[Garage] = []
@@ -137,7 +149,8 @@ class ODPLiege:
     async def __aenter__(self) -> ODPLiege:
         """Async enter.
 
-        Returns:
+        Returns
+        -------
             The Open Data Platform Liège object.
         """
         return self
@@ -146,6 +159,7 @@ class ODPLiege:
         """Async exit.
 
         Args:
+        ----
             _exc_info: Exec type.
         """
         await self.close()
