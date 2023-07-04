@@ -110,15 +110,11 @@ class ODPLiege:
         -------
             A list of DisabledParking objects.
         """
-        results: list[DisabledParking] = []
         locations = await self._request(
             "search/",
             params={"dataset": "stationnement-pmr", "rows": limit},
         )
-
-        for item in locations["records"]:
-            results.append(DisabledParking.from_dict(item))
-        return results
+        return [DisabledParking.from_dict(item) for item in locations["records"]]
 
     async def garages(self, limit: int = 10) -> list[Garage]:
         """Get list of parking garages.
@@ -131,15 +127,11 @@ class ODPLiege:
         -------
             A list of Garage objects.
         """
-        results: list[Garage] = []
         locations = await self._request(
             "search/",
             params={"dataset": "parkings-voitures-hors-voirie", "rows": limit},
         )
-
-        for item in locations["records"]:
-            results.append(Garage.from_dict(item))
-        return results
+        return [Garage.from_dict(item) for item in locations["records"]]
 
     async def close(self) -> None:
         """Close open client session."""
