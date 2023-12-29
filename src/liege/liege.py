@@ -5,26 +5,22 @@ import asyncio
 import socket
 from dataclasses import dataclass
 from importlib import metadata
-from typing import TYPE_CHECKING, Any
+from typing import Any, Self
 
-import aiohttp
-import async_timeout
-from aiohttp import hdrs
+from aiohttp import ClientError, ClientSession
+from aiohttp.hdrs import METH_GET
 from yarl import URL
 
 from .exceptions import ODPLiegeConnectionError, ODPLiegeError
 from .models import DisabledParking, Garage
 
-if TYPE_CHECKING:
-    from typing_extensions import Self
-
 
 @dataclass
 class ODPLiege:
-    """Main class for handling data fetchting from Open Data Platform of Liège."""
+    """Main class for handling data fetching from Open Data Platform of Liège."""
 
     request_timeout: float = 10.0
-    session: aiohttp.client.ClientSession | None = None
+    session: ClientSession | None = None
 
     _close_session: bool = False
 
@@ -32,7 +28,7 @@ class ODPLiege:
         self,
         uri: str,
         *,
-        method: str = hdrs.METH_GET,
+        method: str = METH_GET,
         params: dict[str, Any] | None = None,
     ) -> Any:
         """Handle a request to the Open Data Platform API of Liège.
@@ -67,11 +63,11 @@ class ODPLiege:
         }
 
         if self.session is None:
-            self.session = aiohttp.ClientSession()
+            self.session = ClientSession()
             self._close_session = True
 
         try:
-            async with async_timeout.timeout(self.request_timeout):
+            async with asyncio.timeout(self.request_timeout):
                 response = await self.session.request(
                     method,
                     url,
@@ -85,7 +81,7 @@ class ODPLiege:
             raise ODPLiegeConnectionError(
                 msg,
             ) from exception
-        except (aiohttp.ClientError, socket.gaierror) as exception:
+        except (ClientError, socket.gaierror) as exception:
             msg = "Error occurred while communicating with Open Data Platform API."
             raise ODPLiegeConnectionError(
                 msg,
