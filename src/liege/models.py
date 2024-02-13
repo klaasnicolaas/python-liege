@@ -39,6 +39,7 @@ class Garage:
         Returns:
         -------
             A Garage object.
+
         """
         attr = data["fields"]
         geo = data["geometry"]["coordinates"]
@@ -91,6 +92,7 @@ class DisabledParking:
         Returns:
         -------
             A DisabledParking object.
+
         """
         attr = data["fields"]
         geo = data["geometry"]["coordinates"]
@@ -124,6 +126,7 @@ def strptime(date_string: str, date_format: str, default: None = None) -> Any:
     Returns:
     -------
         The datetime object.
+
     """
     try:
         return datetime.strptime(date_string, date_format).astimezone(tz=pytz.utc)
@@ -144,5 +147,6 @@ def set_address(street: str, number: str, postal_code: str) -> str:
     Returns:
     -------
         The address.
+
     """
     return f"{street} {number}, {postal_code}"
