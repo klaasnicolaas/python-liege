@@ -49,6 +49,7 @@ class ODPLiege:
             ODPLiegeConnectionError: Timeout occurred while
                 connecting to the Open Data Platform API.
             ODPLiegeError: If the data is not valid.
+
         """
         version = metadata.version(__package__)
         url = URL.build(
@@ -76,7 +77,7 @@ class ODPLiege:
                     ssl=True,
                 )
                 response.raise_for_status()
-        except asyncio.TimeoutError as exception:
+        except TimeoutError as exception:
             msg = "Timeout occurred while connecting to the Open Data Platform API."
             raise ODPLiegeConnectionError(
                 msg,
@@ -108,6 +109,7 @@ class ODPLiege:
         Returns:
         -------
             A list of DisabledParking objects.
+
         """
         locations = await self._request(
             "search/",
@@ -125,6 +127,7 @@ class ODPLiege:
         Returns:
         -------
             A list of Garage objects.
+
         """
         locations = await self._request(
             "search/",
@@ -143,6 +146,7 @@ class ODPLiege:
         Returns
         -------
             The Open Data Platform Liège object.
+
         """
         return self
 
@@ -152,5 +156,6 @@ class ODPLiege:
         Args:
         ----
             _exc_info: Exec type.
+
         """
         await self.close()
