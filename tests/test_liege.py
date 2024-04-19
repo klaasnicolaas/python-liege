@@ -15,7 +15,10 @@ from . import load_fixtures
 
 
 @pytest.mark.asyncio
-async def test_json_request(aresponses: ResponsesMockServer) -> None:
+async def test_json_request(
+    aresponses: ResponsesMockServer,
+    odp_liege_client: ODPLiege,
+) -> None:
     """Test JSON response is handled correctly."""
     aresponses.add(
         "opendata.liege.be",
@@ -27,11 +30,9 @@ async def test_json_request(aresponses: ResponsesMockServer) -> None:
             text=load_fixtures("garages.json"),
         ),
     )
-    async with aiohttp.ClientSession() as session:
-        client = ODPLiege(session=session)
-        response = await client._request("test")
-        assert response is not None
-        await client.close()
+    response = await odp_liege_client._request("test")
+    assert response is not None
+    await odp_liege_client.close()
 
 
 @pytest.mark.asyncio
@@ -80,7 +81,10 @@ async def test_timeout(aresponses: ResponsesMockServer) -> None:
 
 
 @pytest.mark.asyncio
-async def test_content_type(aresponses: ResponsesMockServer) -> None:
+async def test_content_type(
+    aresponses: ResponsesMockServer,
+    odp_liege_client: ODPLiege,
+) -> None:
     """Test request content type error from Open Data Platform API of Liège."""
     aresponses.add(
         "opendata.liege.be",
@@ -91,11 +95,8 @@ async def test_content_type(aresponses: ResponsesMockServer) -> None:
             headers={"Content-Type": "blabla/blabla"},
         ),
     )
-
-    async with aiohttp.ClientSession() as session:
-        client = ODPLiege(session=session)
-        with pytest.raises(ODPLiegeError):
-            assert await client._request("test")
+    with pytest.raises(ODPLiegeError):
+        assert await odp_liege_client._request("test")
 
 
 @pytest.mark.asyncio
