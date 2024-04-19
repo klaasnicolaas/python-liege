@@ -28,7 +28,6 @@ packages = [
 aiohttp = ">=3.0.0"
 python = "^3.11"
 yarl = ">=1.6.0"
-pytz = ">=2024.1,<2024.2.0"
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/klaasnicolaas/python-liege/issues"
@@ -47,7 +46,6 @@ pytest = "8.1.1"
 pytest-asyncio = "0.23.6"
 pytest-cov = "5.0.0"
 ruff = "0.4.0"
-types-pytz = "2024.1.0.20240417"
 yamllint = "1.35.1"
 
 [tool.coverage.run]

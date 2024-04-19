@@ -3,10 +3,8 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Any
-
-import pytz
 
 
 @dataclass
@@ -130,7 +128,7 @@ def strptime(date_string: str, date_format: str, default: None = None) -> Any:
 
     """
     try:
-        return datetime.strptime(date_string, date_format).astimezone(tz=pytz.utc)
+        return datetime.strptime(date_string, date_format).replace(tzinfo=UTC)
     except (ValueError, TypeError):
         return default
 
