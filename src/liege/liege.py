@@ -80,14 +80,10 @@ class ODPLiege:
                 response.raise_for_status()
         except TimeoutError as exception:
             msg = "Timeout occurred while connecting to the Open Data Platform API."
-            raise ODPLiegeConnectionError(
-                msg,
-            ) from exception
+            raise ODPLiegeConnectionError(msg) from exception
         except (ClientError, socket.gaierror) as exception:
             msg = "Error occurred while communicating with Open Data Platform API."
-            raise ODPLiegeConnectionError(
-                msg,
-            ) from exception
+            raise ODPLiegeConnectionError(msg) from exception
 
         content_type = response.headers.get("Content-Type", "")
         if "application/json" not in content_type:
