@@ -11,7 +11,7 @@ from liege import ODPLiege
 async def main() -> None:
     """Get the disabled parkings data from Liège API."""
     async with ODPLiege() as client:
-        disabled_parkings = await client.disabled_parkings(limit=5)
+        disabled_parkings = await client.disabled_parkings(limit=10)
 
         count: int = len(disabled_parkings)
         for item in disabled_parkings:

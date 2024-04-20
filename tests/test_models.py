@@ -2,17 +2,24 @@
 
 from __future__ import annotations
 
-import aiohttp
+from typing import TYPE_CHECKING
+
 import pytest
 from aresponses import ResponsesMockServer
-
-from liege import DisabledParking, Garage, ODPLiege
+from syrupy.assertion import SnapshotAssertion
 
 from . import load_fixtures
 
+if TYPE_CHECKING:
+    from liege import DisabledParking, Garage, ODPLiege
+
 
 @pytest.mark.asyncio
-async def test_all_garages(aresponses: ResponsesMockServer) -> None:
+async def test_all_garages(
+    aresponses: ResponsesMockServer,
+    snapshot: SnapshotAssertion,
+    odp_liege_client: ODPLiege,
+) -> None:
     """Test all garages function."""
     aresponses.add(
         "opendata.liege.be",
@@ -24,22 +31,16 @@ async def test_all_garages(aresponses: ResponsesMockServer) -> None:
             text=load_fixtures("garages.json"),
         ),
     )
-    async with aiohttp.ClientSession() as session:
-        client = ODPLiege(session=session)
-        spaces: list[Garage] = await client.garages()
-        assert spaces is not None
-        for item in spaces:
-            assert isinstance(item, Garage)
-            assert item.capacity is not None
-            assert item.url is not None
-            assert item.longitude is not None
-            assert item.latitude is not None
-            assert isinstance(item.longitude, float)
-            assert isinstance(item.latitude, float)
+    spaces: list[Garage] = await odp_liege_client.garages()
+    assert spaces == snapshot
 
 
 @pytest.mark.asyncio
-async def test_disabled_parkings(aresponses: ResponsesMockServer) -> None:
+async def test_disabled_parkings(
+    aresponses: ResponsesMockServer,
+    snapshot: SnapshotAssertion,
+    odp_liege_client: ODPLiege,
+) -> None:
     """Test disabled parking spaces function."""
     aresponses.add(
         "opendata.liege.be",
@@ -51,13 +52,5 @@ async def test_disabled_parkings(aresponses: ResponsesMockServer) -> None:
             text=load_fixtures("disabled_parkings.json"),
         ),
     )
-    async with aiohttp.ClientSession() as session:
-        client = ODPLiege(session=session)
-        spaces: list[DisabledParking] = await client.disabled_parkings()
-        assert spaces is not None
-        for item in spaces:
-            assert item.spot_id is not None
-            assert item.longitude is not None
-            assert item.latitude is not None
-            assert isinstance(item.longitude, float)
-            assert isinstance(item.latitude, float)
+    spaces: list[DisabledParking] = await odp_liege_client.disabled_parkings()
+    assert spaces == snapshot

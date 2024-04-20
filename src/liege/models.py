@@ -58,8 +58,12 @@ class Garage:
             url=attr.get("website"),
             longitude=geo[0],
             latitude=geo[1],
-            created_at=strptime(attr.get("created"), "%Y-%m-%d"),
-            updated_at=strptime(attr.get("last_modified"), "%Y-%m-%d"),
+            created_at=datetime.strptime(attr.get("created"), "%Y-%m-%d").replace(
+                tzinfo=UTC
+            ),
+            updated_at=datetime.strptime(attr.get("last_modified"), "%Y-%m-%d").replace(
+                tzinfo=UTC
+            ),
         )
 
 
@@ -77,7 +81,7 @@ class DisabledParking:
     longitude: float
     latitude: float
 
-    created_at: datetime | None
+    created_at: datetime
     updated_at: datetime
 
     @classmethod
@@ -108,29 +112,13 @@ class DisabledParking:
             status=attr.get("status"),
             longitude=geo[0],
             latitude=geo[1],
-            created_at=strptime(attr.get("created"), "%Y-%m-%d"),
-            updated_at=strptime(attr.get("last_modified"), "%Y-%m-%d"),
+            created_at=datetime.strptime(attr.get("created"), "%Y-%m-%d").replace(
+                tzinfo=UTC
+            ),
+            updated_at=datetime.strptime(attr.get("last_modified"), "%Y-%m-%d").replace(
+                tzinfo=UTC
+            ),
         )
-
-
-def strptime(date_string: str, date_format: str, default: None = None) -> Any:
-    """Strptime function with default value.
-
-    Args:
-    ----
-        date_string: The date string.
-        date_format: The format of the date string.
-        default: The default value.
-
-    Returns:
-    -------
-        The datetime object.
-
-    """
-    try:
-        return datetime.strptime(date_string, date_format).replace(tzinfo=UTC)
-    except (ValueError, TypeError):
-        return default
 
 
 def set_address(street: str, number: str, postal_code: str) -> str:
