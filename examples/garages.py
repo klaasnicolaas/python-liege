@@ -9,7 +9,7 @@ from liege import ODPLiege
 async def main() -> None:
     """Get the garages data from Liège API."""
     async with ODPLiege() as client:
-        garages = await client.garages(limit=12)
+        garages = await client.garages(limit=10)
 
         count: int = len(garages)
         for item in garages:

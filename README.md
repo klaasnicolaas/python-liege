@@ -36,8 +36,8 @@ pip install liege
 
 You can read the following datasets with this package:
 
-- [Disabled parking spaces / Stationnement PMR][disabled_parking] (952 locations)
-- [Garages / Les parkings voitures hors voirie][garages] (26 locations)
+- [Disabled parking spaces / Stationnement PMR][disabled_parking] (1062 locations)
+- [Garages / Les parkings voitures hors voirie][garages] (32 locations)
 
 <details>
     <summary>Click here to get more details</summary>
