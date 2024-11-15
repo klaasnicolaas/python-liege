@@ -15,6 +15,8 @@ from yarl import URL
 from .exceptions import ODPLiegeConnectionError, ODPLiegeError
 from .models import DisabledParking, Garage
 
+VERSION = metadata.version(__package__)
+
 
 @dataclass
 class ODPLiege:
@@ -52,7 +54,6 @@ class ODPLiege:
             ODPLiegeError: If the data is not valid.
 
         """
-        version = metadata.version(__package__)
         url = URL.build(
             scheme="https",
             host="opendata.liege.be",
@@ -61,7 +62,7 @@ class ODPLiege:
 
         headers = {
             "Accept": "application/json",
-            "User-Agent": f"PythonODPLiege/{version}",
+            "User-Agent": f"PythonODPLiege/{VERSION}",
         }
 
         if self.session is None:
