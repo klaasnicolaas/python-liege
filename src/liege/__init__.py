@@ -5,9 +5,9 @@ from .liege import ODPLiege
 from .models import DisabledParking, Garage
 
 __all__ = [
+    "DisabledParking",
+    "Garage",
     "ODPLiege",
     "ODPLiegeConnectionError",
     "ODPLiegeError",
-    "Garage",
-    "DisabledParking",
 ]
