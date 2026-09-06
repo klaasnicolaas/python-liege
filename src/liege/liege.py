@@ -15,7 +15,7 @@ from yarl import URL
 from .exceptions import ODPLiegeConnectionError, ODPLiegeError
 from .models import DisabledParking, Garage
 
-VERSION = metadata.version(__package__)
+VERSION = metadata.version("liege")
 
 
 @dataclass
