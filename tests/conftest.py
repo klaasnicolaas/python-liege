@@ -9,7 +9,7 @@ from liege import ODPLiege
 
 
 @pytest.fixture(name="odp_liege_client")
-async def client() -> AsyncGenerator[ODPLiege, None]:
+async def client() -> AsyncGenerator[ODPLiege]:
     """Fixture to create an ODPLiege client."""
     async with (
         ClientSession() as session,
